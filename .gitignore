@@ -27,6 +27,7 @@ Thumbs.db
 
 # E2E test screenshots and backend env
 frontend/test-evidence/
+frontend/test-results/
 backend/.env
 
 # Medium article (not for public repo)
