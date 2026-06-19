@@ -1,0 +1,29 @@
+server:
+  port: ${CONTEXTCANVAS_PORT:8080}
+
+contextcanvas:
+  database:
+    path: ${CONTEXTCANVAS_DB_PATH:./data/contextcanvas.db}
+  llm:
+    api-url: ${CONTEXTCANVAS_LLM_API_URL:https://api.openai.com/v1}
+    model: ${CONTEXTCANVAS_LLM_MODEL:gpt-4o}
+    api-key: ${CONTEXTCANVAS_LLM_API_KEY:}
+    test-mode: ${CONTEXTCANVAS_LLM_TEST_MODE:false}
+
+spring:
+  datasource:
+    url: jdbc:sqlite:${contextcanvas.database.path}
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 4
+      connection-timeout: 5000
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    create-schemas: false
+
+logging:
+  level:
+    com.contextcanvas: ${CONTEXTCANVAS_LOG_LEVEL:INFO}
+    org.springframework: WARN

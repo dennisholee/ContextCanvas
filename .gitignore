@@ -1,0 +1,33 @@
+# Java
+backend/target/
+backend/*.db
+backend/data/
+*.class
+*.jar
+*.war
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# E2E test screenshots and backend env
+frontend/test-evidence/
+backend/.env
+
+# Medium article (not for public repo)
+medium-article.md
